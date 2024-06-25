@@ -17,7 +17,6 @@ public class AssemblyLine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnItem(Test);
     }
 
     // Update is called once per frame
@@ -26,7 +25,7 @@ public class AssemblyLine : MonoBehaviour
 
     }
 
-    // Spawn An Item
+    //Spawn An Item
     public void SpawnItem(GameObject gameObject)
     {
         GameObject temp = Instantiate(gameObject, SpawnLocation.position, Quaternion.identity);
