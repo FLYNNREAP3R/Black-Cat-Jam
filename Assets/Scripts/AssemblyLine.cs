@@ -14,6 +14,9 @@ public class AssemblyLine : MonoBehaviour
     [SerializeField] private float minInteractionDistance = 0.5f;
     [SerializeField] private Transform interactionZone;
 
+    [SerializeField] private KeyCode packageKeyCode;
+    [SerializeField] private KeyCode yeetKeyCode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +25,68 @@ public class AssemblyLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(packageKeyCode))
+        {
+            PackageItem();
+        }
 
+        if (Input.GetKeyDown(yeetKeyCode))
+        {
+            YeetItem();
+        }
     }
 
+    private void PackageItem()
+    {
+        Debug.Log("item packed");
+        GameObject itemToPackage = GetClosestItem()?.gameObject;
+
+        if (itemToPackage != null)
+        {
+            int itemScore = itemToPackage.GetComponent<ItemStats>().itemScore;
+
+            // checks for good or bad item
+            if (itemToPackage.tag.Equals("Package"))
+            {
+                GameManager.Instance.UpdateScore(-1);
+            }
+            else
+            {
+                //Update sprite to package
+                itemToPackage.GetComponent<SpriteRenderer>().color = Color.green;
+                itemToPackage.tag = "Package";
+                GameManager.Instance.UpdateScore(itemScore);
+            }
+        }
+        else
+        {
+            GameManager.Instance.UpdateScore(-1);
+        }
+    }
+
+    private void YeetItem()
+    {
+        Debug.Log("item yeeted");
+        GameObject itemToYeet =GetClosestItem()?.gameObject;
+
+        if (itemToYeet != null)
+        {
+            int itemScore = itemToYeet.GetComponent<ItemStats>().itemScore;
+
+            if (itemToYeet.tag.Equals("Bad"))
+            {
+                GameManager.Instance.UpdateScore(itemScore * -1);
+            }
+            else
+            { 
+                GameManager.Instance.UpdateScore(itemScore * -1); 
+            }
+
+            Destroy(itemToYeet);
+        }
+
+    }
+    
     //Spawn An Item
     public void SpawnItem(GameObject gameObject)
     {
@@ -33,7 +95,7 @@ public class AssemblyLine : MonoBehaviour
         temp.GetComponent<ItemMovement>().path = PathNodes;
     }
 
-    private Transform GetClosetItem()
+    private Transform GetClosestItem()
     {
         Transform closestItem = null;
         float closestDistance = 100000f;

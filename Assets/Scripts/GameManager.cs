@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         return boxScore;
     }
 
+    public void UpdateScore(int scoreAdjustment)
+    {
+        boxScore += scoreAdjustment;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
