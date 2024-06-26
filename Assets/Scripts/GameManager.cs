@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
             Shake.Instance.start = true;
 
             consecutiveFuckUps++;
-            productivity += scoreAdjustment * consecutiveFuckUps * 2;
+            productivity = Mathf.Clamp(productivity + (scoreAdjustment * consecutiveFuckUps * 2), 0, 100);
 
             currentMultiplerIndex = 0;
             actionsTilMultIncrease = maxActionsTilMultIncrease;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         else
         {
             consecutiveFuckUps = 0;
-            productivity += scoreAdjustment * multiplierLevels[currentMultiplerIndex] * 2;
+            productivity = Mathf.Clamp(productivity + (scoreAdjustment * multiplierLevels[currentMultiplerIndex] * 2), 0, 100);
             actionsTilMultIncrease--;
             if (actionsTilMultIncrease <= 0)
             {
