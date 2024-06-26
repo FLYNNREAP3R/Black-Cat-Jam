@@ -23,6 +23,7 @@ public class GeneralScore : MonoBehaviour
     {
         boxScoreTxt.text = "Score: " + GameManager.Instance.GetScore();
 
+        // Checks if there is time left and if so keeps subtracting time incrementally from the set time in timeLeft.
         if (timeLeft > 0) 
         {
             Debug.Log("Keep going!");
@@ -36,6 +37,7 @@ public class GeneralScore : MonoBehaviour
         }
     }
 
+    // Formats time to show in minutes/seconds
     void UpdateTImer(float currentTime)
     {
         currentTime += 1;
