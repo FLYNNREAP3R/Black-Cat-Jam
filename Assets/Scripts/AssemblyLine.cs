@@ -38,7 +38,6 @@ public class AssemblyLine : MonoBehaviour
 
     private void PackageItem()
     {
-        Debug.Log("item packed");
         GameObject itemToPackage = GetClosestItem()?.gameObject;
 
         if (itemToPackage != null)
@@ -66,7 +65,6 @@ public class AssemblyLine : MonoBehaviour
 
     private void YeetItem()
     {
-        Debug.Log("item yeeted");
         GameObject itemToYeet =GetClosestItem()?.gameObject;
 
         if (itemToYeet != null)
@@ -83,6 +81,10 @@ public class AssemblyLine : MonoBehaviour
             }
 
             Destroy(itemToYeet);
+        }
+        else
+        {
+            GameManager.Instance.UpdateScore(-1);
         }
 
     }

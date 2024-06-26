@@ -34,13 +34,11 @@ public class ItemMovement : MonoBehaviour
         }
         else if (hasReachedNode)
         {
-            // TODO -> Need to update to check if item was packaged/yeeted correctly. Currently adds 1 if item passes through last node
             if (gameObject.tag.Equals("Good") || gameObject.tag.Equals("Bad"))
             {
-                GameManager.Instance.UpdateScore(1);
+                GameManager.Instance.UpdateScore(-1);
             }
 
-                
             Destroy(gameObject);
         }
 

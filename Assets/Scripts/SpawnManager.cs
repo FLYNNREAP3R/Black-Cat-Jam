@@ -4,16 +4,55 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] itemsToSpawn;
+    [SerializeField] private GameObject[] goodItems;
+    [SerializeField] private GameObject[] badItems;
     [SerializeField] private AssemblyLine[] assemblyLines;
+
+    [SerializeField] private float timeBetweenSpawnMin = 1;
+    [SerializeField] private float timeBetweenSpawnMax = 3;
 
     private void Start()
     {
-        assemblyLines[0].SpawnItem(itemsToSpawn[0]);
+        if (goodItems.Length == 0)
+            Debug.LogError("No Good Items Found in Spawn Manager");
+        if (badItems.Length == 0)
+            Debug.LogError("No Bad Items Found in Spawn Manager");
+        if (assemblyLines.Length == 0)
+            Debug.LogError("No Assembly Lines Found in Spawn Manager");
+
+        foreach (AssemblyLine assemblyLineToSpawnAt in assemblyLines) 
+        {
+            StartCoroutine(SpawnItems(assemblyLineToSpawnAt));
+        }
     }
 
+    private void SpawnGoodItem(AssemblyLine line)
+    {
+        GameObject itemToSpawn = goodItems[Random.Range(0, goodItems.Length)];
+        line.SpawnItem(itemToSpawn);
+    }
 
-    // Spawn Good Item
+    private void SpawnBadItem(AssemblyLine line)
+    {
+        GameObject itemToSpawn = badItems[Random.Range(0, goodItems.Length)];
+        line.SpawnItem(itemToSpawn);
+    }
 
-    // Spawn Bad Item
+    private IEnumerator SpawnItems(AssemblyLine assemblyLineToSpawnAt)
+    {
+        while (true)
+        {
+            float spawnTimer = Random.Range(timeBetweenSpawnMin, timeBetweenSpawnMax);
+
+            yield return new WaitForSeconds(spawnTimer);
+
+            if (Random.Range(0f, 1f) > 0.5)
+            {
+                SpawnGoodItem(assemblyLineToSpawnAt);
+            } else
+            {
+                SpawnBadItem(assemblyLineToSpawnAt);
+            }
+        }
+    }
 }
