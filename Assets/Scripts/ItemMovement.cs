@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 public class ItemMovement : MonoBehaviour
 {
-    [SerializeField] private float itemSpeed = 5.0f;
+    [SerializeField] private float itemSpeed = 3.0f;
 
     public Transform[] path;
     int currentNode;
@@ -47,6 +48,17 @@ public class ItemMovement : MonoBehaviour
     // Moves gameObject towards next closest node in path
     private void MoveTowardsNode()
     {
+        if (currentNode == 0)
+        {
+            itemSpeed = 6f;
+        } else if (currentNode == 1)
+        {
+            itemSpeed = 4f;
+        } else
+        {
+            itemSpeed = 2f;
+        }
+
         transform.position = Vector3.MoveTowards(transform.position, path[currentNode].transform.position, itemSpeed * Time.deltaTime);
     }
 }
