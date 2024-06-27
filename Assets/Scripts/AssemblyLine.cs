@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.U2D;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class AssemblyLine : MonoBehaviour
 {
@@ -23,9 +26,33 @@ public class AssemblyLine : MonoBehaviour
     [SerializeField] private TextMeshProUGUI packageKeyText;
     [SerializeField] private TextMeshProUGUI yeetKeyText;
 
+    [SerializeField] private int assemblyLineNumber;
+
+    [SerializeField] private List<Sprite> boxSprites;
+
     // Start is called before the first frame update
     void Start()
     {
+        switch (assemblyLineNumber)
+        {
+            case 1:
+                packageKeyCode = GameSettings.Instance.PackageKeyCode_1;
+                yeetKeyCode = GameSettings.Instance.YeetKeyCode_1;
+                break;
+            case 2:
+                packageKeyCode = GameSettings.Instance.PackageKeyCode_2;
+                yeetKeyCode = GameSettings.Instance.YeetKeyCode_2;
+                break;
+            case 3:
+                packageKeyCode = GameSettings.Instance.PackageKeyCode_3;
+                yeetKeyCode = GameSettings.Instance.YeetKeyCode_3;
+                break;
+            case 4:
+                packageKeyCode = GameSettings.Instance.PackageKeyCode_4;
+                yeetKeyCode = GameSettings.Instance.YeetKeyCode_4;
+                break;
+        }
+
         packageKeyText.text = packageKeyCode.ToString();
         yeetKeyText.text = yeetKeyCode.ToString();
     }
@@ -62,16 +89,25 @@ public class AssemblyLine : MonoBehaviour
                 //Load Truck
                 deliveryTruck.LoadBox();
 
-                //Update sprite to package
-                itemToPackage.GetComponent<SpriteRenderer>().color = Color.green;
+                //Disable item animator
+                Animator itemAnimator = itemToPackage.GetComponent<Animator>();
+                if (itemAnimator != null)
+                    itemAnimator.enabled = false;
+
+                Sprite randomBoxSprite = boxSprites[Random.Range(0, boxSprites.Count)];
+                SpriteRenderer renderer = itemToPackage.GetComponent<SpriteRenderer>();
+                renderer.sprite = randomBoxSprite;
                 itemToPackage.tag = "Package";
                 GameManager.Instance.UpdateScore(itemScore);
+                
             }
         }
         else
         {
             GameManager.Instance.UpdateScore(-1);
         }
+
+
     }
 
     private void YeetItem()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         boxScore = 0;
         actionsTilMultIncrease = maxActionsTilMultIncrease;
         productivity = 50;
@@ -75,6 +77,14 @@ public class GameManager : MonoBehaviour
 
             currentMultiplerIndex = 0;
             actionsTilMultIncrease = maxActionsTilMultIncrease;
+
+            // Check if Game Over
+            if (productivity <= 0)
+            {
+                Time.timeScale = 0f;
+                Shake.Instance.StopShaking();
+                UiManager.Instance.GameOver();
+            }
         }
         // Good Score
         else
@@ -87,8 +97,25 @@ public class GameManager : MonoBehaviour
                 actionsTilMultIncrease = maxActionsTilMultIncrease;
                 currentMultiplerIndex++;
                 Debug.Log("Multiplier Increased to " + multiplierLevels[currentMultiplerIndex]);
+                // When multiplier UI is created, call UI Manager to update the mult UI
             }
             boxScore += (scoreAdjustment * multiplierLevels[currentMultiplerIndex]);
         }
+    }
+
+    // Scene Management
+    public void RetryGame()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }

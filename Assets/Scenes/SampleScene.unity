@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 430208307}
   - component: {fileID: 430208306}
   m_Layer: 0
-  m_Name: menuTxt
+  m_Name: MenuTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 532458262}
   - component: {fileID: 532458261}
   m_Layer: 0
-  m_Name: quitTxt
+  m_Name: QuitTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 796476200}
   - component: {fileID: 796476199}
   m_Layer: 0
-  m_Name: retryTxt
+  m_Name: RetryTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,7 +1108,7 @@ GameObject:
   - component: {fileID: 837487624}
   - component: {fileID: 837487623}
   m_Layer: 0
-  m_Name: retryButton
+  m_Name: RetryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1178,9 +1178,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1378701258}
-        m_TargetAssemblyTypeName: GeneralScore, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 396530340}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RetryGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 1006515317}
   - component: {fileID: 1006515316}
   m_Layer: 0
-  m_Name: timerLabel
+  m_Name: TimerLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,6 +1721,7 @@ GameObject:
   - component: {fileID: 1283151814}
   - component: {fileID: 1283151813}
   - component: {fileID: 1283151812}
+  - component: {fileID: 1283151815}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1812,6 +1813,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1283151815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283151810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab94eb31898d7e4cb7a3d36f06d5d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1006515316}
+  boxScoreText: {fileID: 1299082148}
+  productivityBar: {fileID: 1653258365}
+  gameOverUI: {fileID: 1208361924}
+  playerUI: {fileID: 1378701256}
 --- !u!1 &1299082146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1842,7 @@ GameObject:
   - component: {fileID: 1299082149}
   - component: {fileID: 1299082148}
   m_Layer: 0
-  m_Name: scoreLabel
+  m_Name: ScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2076,9 +2094,8 @@ GameObject:
   - component: {fileID: 1378701257}
   - component: {fileID: 1378701260}
   - component: {fileID: 1378701259}
-  - component: {fileID: 1378701258}
   m_Layer: 0
-  m_Name: UI
+  m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2106,23 +2123,6 @@ RectTransform:
   m_AnchoredPosition: {x: 784.7407, y: -430.1892}
   m_SizeDelta: {x: -1569.4812, y: -860.3784}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1378701258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378701256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab94eb31898d7e4cb7a3d36f06d5d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 1006515316}
-  boxScoreText: {fileID: 1299082148}
-  productivityBar: {fileID: 1653258365}
-  gameOverUI: {fileID: 1208361924}
-  playerUI: {fileID: 1378701256}
 --- !u!114 &1378701259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 1441238716}
   - component: {fileID: 1441238715}
   m_Layer: 0
-  m_Name: menuButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2412,8 +2412,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1378701258}
-        m_TargetAssemblyTypeName: GeneralScore, Assembly-CSharp
+      - m_Target: {fileID: 396530340}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -2609,7 +2609,7 @@ GameObject:
   - component: {fileID: 1526242972}
   - component: {fileID: 1526242971}
   m_Layer: 0
-  m_Name: quitBtn
+  m_Name: QuitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2679,8 +2679,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1378701258}
-        m_TargetAssemblyTypeName: GeneralScore, Assembly-CSharp
+      - m_Target: {fileID: 396530340}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -2936,6 +2936,38 @@ PrefabInstance:
       propertyPath: packageKeyCode
       value: 111
       objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: assemblyLineNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -1097972534, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1787822347, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -342155310, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 1154165110, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 1542878061, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: -1820173723, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
     - target: {fileID: 7153087636805392333, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_Name
       value: AssemblyLine_02
@@ -3374,14 +3406,42 @@ PrefabInstance:
       propertyPath: deliveryTruck
       value: 
       objectReference: {fileID: 44430712}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: assemblyLineNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -1097972534, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1787822347, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -342155310, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 1154165110, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 1542878061, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: boxSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: -1820173723, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
     - target: {fileID: 7153087636805392333, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_Name
       value: AssemblyLine_01
       objectReference: {fileID: 0}
-    - target: {fileID: 8758866323670611905, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 519420031}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

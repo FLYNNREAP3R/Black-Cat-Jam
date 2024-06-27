@@ -101,6 +101,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSpeed: 2
   path: []
+  boxSprites:
+  - {fileID: -1097972534, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+  - {fileID: -1787822347, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+  - {fileID: -342155310, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+  - {fileID: 1154165110, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+  - {fileID: 1542878061, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+  - {fileID: -1820173723, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
 --- !u!114 &-4849072678245118547
 MonoBehaviour:
   m_ObjectHideFlags: 0
