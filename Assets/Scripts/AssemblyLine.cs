@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -17,9 +18,16 @@ public class AssemblyLine : MonoBehaviour
     [SerializeField] private KeyCode packageKeyCode;
     [SerializeField] private KeyCode yeetKeyCode;
 
+    [SerializeField] private DeliveryTruck deliveryTruck;
+
+    [SerializeField] private TextMeshProUGUI packageKeyText;
+    [SerializeField] private TextMeshProUGUI yeetKeyText;
+
     // Start is called before the first frame update
     void Start()
     {
+        packageKeyText.text = packageKeyCode.ToString();
+        yeetKeyText.text = yeetKeyCode.ToString();
     }
 
     // Update is called once per frame
@@ -51,6 +59,9 @@ public class AssemblyLine : MonoBehaviour
             }
             else
             {
+                //Load Truck
+                deliveryTruck.LoadBox();
+
                 //Update sprite to package
                 itemToPackage.GetComponent<SpriteRenderer>().color = Color.green;
                 itemToPackage.tag = "Package";
