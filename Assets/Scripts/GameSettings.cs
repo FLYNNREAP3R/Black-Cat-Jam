@@ -24,7 +24,7 @@ public class GameSettings : MonoBehaviour
 
     // General Settings
     [Header("General")]
-    [SerializeField] private int volume = 50;
+    [SerializeField] public int volume = 50;
 
     // Assemblyline KeyCodes
     [Header("KeyCodes")]
