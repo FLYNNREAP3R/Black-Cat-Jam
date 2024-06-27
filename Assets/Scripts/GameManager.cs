@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -40,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         boxScore = 0;
         actionsTilMultIncrease = maxActionsTilMultIncrease;
+        productivity = 50;
     }
 
     // Update is called once per frame

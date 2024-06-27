@@ -13,7 +13,7 @@ public class Shake : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+
         }
         else
         {
@@ -26,6 +26,7 @@ public class Shake : MonoBehaviour
     public bool start = false;
     public float duration = 1f;
     public AnimationCurve curve;
+    public bool canShake = true;
 
     public Vector3 startPosition;
 
@@ -42,7 +43,7 @@ public class Shake : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < duration)
+        while (elapsedTime < duration && canShake)
         {
             elapsedTime += Time.deltaTime;
             float strength = curve.Evaluate(elapsedTime / duration);
@@ -51,5 +52,10 @@ public class Shake : MonoBehaviour
         }
 
         transform.position = startPosition;
+    }
+
+    public void StopShaking()
+    {
+        canShake = false;
     }
 }
