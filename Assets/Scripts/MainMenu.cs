@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject creditsUI;
+
+    [SerializeField] Animator transitionAnimation;
 
     private void Start()
     {

@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
     // Scene Management
     public void RetryGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(1);   
     }
 
     public void QuitGame()
@@ -118,4 +118,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(0);
     }
+
 }
