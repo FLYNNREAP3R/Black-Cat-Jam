@@ -6,6 +6,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialUI;
+    [SerializeField] private GameObject creditsUI;
 
     private void Start()
     {
@@ -29,5 +30,10 @@ public class MainMenu : MonoBehaviour
     public void SetActiveTutorial(bool isActive)
     {
         tutorialUI.SetActive(isActive);
+    }
+
+    public void SetActiveCredits(bool isActive)
+    {
+        creditsUI.SetActive(isActive);
     }
 }
