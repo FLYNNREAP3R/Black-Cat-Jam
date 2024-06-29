@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] List<AudioSource> AudioSources = new List<AudioSource>();
+    [SerializeField] Slider volumeSlider;
 
     private void Start()
     {
@@ -15,5 +17,11 @@ public class AudioManager : MonoBehaviour
         {
             source.volume = GameSettings.Instance.volume / 100f;
         }
+
+    }
+
+    public void ChangeVolume()
+    {
+        AudioListener.volume = volumeSlider.value;
     }
 }

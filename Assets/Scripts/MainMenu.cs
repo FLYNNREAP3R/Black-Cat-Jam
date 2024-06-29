@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject creditsUI;
+    [SerializeField] private GameObject settingsUI;
 
     [SerializeField] Animator transitionAnimation;
 
@@ -38,5 +39,15 @@ public class MainMenu : MonoBehaviour
     public void SetActiveCredits(bool isActive)
     {
         creditsUI.SetActive(isActive);
+    }
+
+    public void SetActiveSettings(bool isActive)
+    {
+        settingsUI.SetActive(isActive);
+    }
+
+    public void ScreenShake()
+    {
+        Shake.Instance.StopShaking();
     }
 }

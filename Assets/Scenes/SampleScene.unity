@@ -1240,6 +1240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 26885172336712752, guid: bac4999e12d803b45bd198d55cc8dfbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2563785740110726802, guid: bac4999e12d803b45bd198d55cc8dfbe, type: 3}
       propertyPath: transitionAnim
       value: 
