@@ -1809,15 +1809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 50
-  PackageKeyCode_1: 113
-  YeetKeyCode_1: 119
-  PackageKeyCode_2: 101
-  YeetKeyCode_2: 114
-  PackageKeyCode_3: 117
-  YeetKeyCode_3: 105
-  PackageKeyCode_4: 111
-  YeetKeyCode_4: 112
-  NumberOfAssemblyLines: 2
+  NumberOfAssemblyLines: 1
 --- !u!4 &526588849
 Transform:
   m_ObjectHideFlags: 0
