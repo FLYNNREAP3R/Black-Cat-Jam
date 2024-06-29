@@ -5,23 +5,24 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
-    public Animator transitionAnim;
     public float transitionTime = 1f;
+    public Animator transition;
     // Update is called once per frame
     void Update()
     {
+
     }
 
-    public void LoadNextLevel()
+    public void LoadNextLevel(string sceneName)
     {
-       StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(sceneName));
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel(string sceneName)
     {
-        transitionAnim.SetTrigger("Start");
+        Time.timeScale = 1f;
+        transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex);
-
+        SceneManager.LoadScene(sceneName);
     }
 }

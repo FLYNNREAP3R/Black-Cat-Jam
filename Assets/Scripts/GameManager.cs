@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private int boxScore = 0;
     private float timeLeft = 0f;
 
+    [SerializeField] private LevelLoader levelLoader;
+
     // Multiplier Fields
     private int currentMultiplerIndex = 0;
     private int actionsTilMultIncrease;
@@ -107,7 +109,7 @@ public class GameManager : MonoBehaviour
     // Scene Management
     public void RetryGame()
     {
-        SceneManager.LoadSceneAsync(1);   
+        levelLoader.LoadNextLevel("SampleScene");
     }
 
     public void QuitGame()
@@ -117,7 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        levelLoader.LoadNextLevel("MainMenu");
     }
 
 }

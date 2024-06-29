@@ -9,8 +9,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private GameObject settingsUI;
+    [SerializeField] private LevelLoader levelLoader;
 
     [SerializeField] Animator transitionAnimation;
+
+
 
     private void Start()
     {
@@ -18,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        levelLoader.LoadNextLevel("SampleScene");
     }
 
     public void QuitGame()
