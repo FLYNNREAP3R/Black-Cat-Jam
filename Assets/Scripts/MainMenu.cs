@@ -6,6 +6,7 @@ using UnityEngine.UIElements.Experimental;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private GameObject settingsUI;
@@ -31,21 +32,26 @@ public class MainMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SetActiveTutorial(false);
+        SetActiveCredits(false);
+        SetActiveSettings(false);
     }
 
     public void SetActiveTutorial(bool isActive)
     {
+        mainMenuUI.SetActive(!isActive);
         tutorialUI.SetActive(isActive);
     }
 
     public void SetActiveCredits(bool isActive)
     {
+        mainMenuUI.SetActive(!isActive);
         creditsUI.SetActive(isActive);
     }
 
     public void SetActiveSettings(bool isActive)
     {
+        mainMenuUI.SetActive(!isActive);
         settingsUI.SetActive(isActive);
     }
 }

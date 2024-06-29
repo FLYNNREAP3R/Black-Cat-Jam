@@ -137,9 +137,12 @@ public class AssemblyLine : MonoBehaviour
     //Spawn An Item
     public void SpawnItem(GameObject gameObject)
     {
-        GameObject temp = Instantiate(gameObject, SpawnLocation.position, Quaternion.identity);
-        temp.transform.parent = ItemContainer.transform;
-        temp.GetComponent<ItemMovement>().path = PathNodes;
+        GameObject item = Instantiate(gameObject, SpawnLocation.position, Quaternion.identity);
+        item.transform.parent = ItemContainer.transform;
+        item.GetComponent<ItemMovement>().path = PathNodes;
+
+        if (assemblyLineNumber == 2 || assemblyLineNumber == 4)
+            item.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     private Transform GetClosestItem()

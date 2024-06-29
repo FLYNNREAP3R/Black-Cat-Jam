@@ -9,6 +9,8 @@ public class BgObjects : MonoBehaviour
     private List<GameObject> rightChildren;
     private List<GameObject> leftChildren;
 
+    [SerializeField] private GameObject background;
+
     [SerializeField] private List<Sprite> sprites;
 
     private void Start()

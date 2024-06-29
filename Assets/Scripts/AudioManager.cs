@@ -22,6 +22,9 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeVolume()
     {
-        AudioListener.volume = volumeSlider.value;
+        foreach (AudioSource source in AudioSources)
+        {
+            source.volume = volumeSlider.value;
+        }
     }
 }
