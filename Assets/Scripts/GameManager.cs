@@ -108,8 +108,6 @@ public class GameManager : MonoBehaviour
             {
                 actionsTilMultIncrease = maxActionsTilMultIncrease;
                 currentMultiplerIndex++;
-                Debug.Log("Multiplier Increased to " + multiplierLevels[currentMultiplerIndex]);
-                // When multiplier UI is created, call UI Manager to update the mult UI
             }
             boxScore += (scoreAdjustment * multiplierLevels[currentMultiplerIndex]);
         }

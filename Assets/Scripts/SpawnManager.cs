@@ -39,8 +39,6 @@ public class SpawnManager : MonoBehaviour
         
         foreach (AssemblyLine assemblyLineToSpawnAt in assemblyLines) 
         {
-            Debug.Log(assemblyLineToSpawnAt.assemblyLineNumber.ToString());
-            Debug.Log(GameSettings.Instance.NumberOfAssemblyLines);
             if (assemblyLineToSpawnAt.assemblyLineNumber <= GameSettings.Instance.NumberOfAssemblyLines)
                 StartCoroutine(SpawnItems(assemblyLineToSpawnAt));
             else

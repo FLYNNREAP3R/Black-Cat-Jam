@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class UiManager : MonoBehaviour
 {
@@ -24,40 +25,39 @@ public class UiManager : MonoBehaviour
     //singleton
     #endregion
 
-    public TextMeshProUGUI boxScoreText;
-    public TextMeshProUGUI multText;
     public Image productivityBar;
     public GameObject gameOverUI;
     public GameObject playerUI;
-    
+
+    [Header("Sprites")]
+    [SerializeField] private List<Sprite> numbers;
+
+    [SerializeField] private SpriteRenderer FirstDigitScrore;
+    [SerializeField] private SpriteRenderer SecondDigitScore;
+    [SerializeField] private SpriteRenderer ThirdDigitScore;
+    [SerializeField] private SpriteRenderer FourthDigitScore;
+
+    [SerializeField] private SpriteRenderer FirstMultScore;
+    [SerializeField] private SpriteRenderer SecondMultScore;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         playerUI.SetActive(true);
         gameOverUI.SetActive(false);
-        boxScoreText.text = "0000";
-        multText.text = "01";
         UpdateProductivityBar();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var boxScore = GameManager.Instance.GetScore().ToString();
-        var multScore = GameManager.Instance.GetMult().ToString();
+        var boxScore = GameManager.Instance.GetScore();
+        var multScore = GameManager.Instance.GetMult();
 
-        while (boxScore.Length < 4)
-        {
-            boxScore = "0" + boxScore;
-        }
-
-        while (multScore.Length < 2)
-        {
-            multScore = "0" + multScore;
-        }
-
-        boxScoreText.text = boxScore;
-        multText.text = multScore;
+        UpdateScore(boxScore);
+        UpdateMult(multScore);
         UpdateProductivityBar();
     }
 
@@ -70,5 +70,34 @@ public class UiManager : MonoBehaviour
     {
         playerUI.SetActive(false);
         gameOverUI.SetActive(true);
+    }
+
+    private void UpdateDigit(int number, SpriteRenderer renderer)
+    {
+        renderer.sprite = numbers[number];
+    }
+
+    private void UpdateScore(int boxScore)
+    {
+        var firstNumberScore = boxScore % 10;
+        UpdateDigit(firstNumberScore, FirstDigitScrore);
+
+        var secondNumberScore = (boxScore % 100) / 10;
+        UpdateDigit(secondNumberScore, SecondDigitScore);
+
+        var thirdNumberScore = (boxScore % 1000) / 100;
+        UpdateDigit(thirdNumberScore, ThirdDigitScore);
+
+        var fourthNumberScore = (boxScore % 10000) / 1000;
+        UpdateDigit(fourthNumberScore, FourthDigitScore);
+    }
+
+    private void UpdateMult(int multScore)
+    {
+        var firstNumberMult = multScore % 10;
+        UpdateDigit(firstNumberMult, FirstMultScore);
+
+        var secondNumberMult = (multScore % 100) / 10;
+        UpdateDigit(secondNumberMult, SecondMultScore);
     }
 }
