@@ -3541,7 +3541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 50
-  NumberOfAssemblyLines: 1
+  NumberOfAssemblyLines: 2
 --- !u!4 &526588849
 Transform:
   m_ObjectHideFlags: 0
