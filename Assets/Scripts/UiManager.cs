@@ -25,6 +25,7 @@ public class UiManager : MonoBehaviour
     #endregion
 
     public TextMeshProUGUI boxScoreText;
+    public TextMeshProUGUI multText;
     public Image productivityBar;
     public GameObject gameOverUI;
     public GameObject playerUI;
@@ -35,6 +36,7 @@ public class UiManager : MonoBehaviour
         playerUI.SetActive(true);
         gameOverUI.SetActive(false);
         boxScoreText.text = "0000";
+        multText.text = "01";
         UpdateProductivityBar();
     }
 
@@ -42,13 +44,20 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         var boxScore = GameManager.Instance.GetScore().ToString();
+        var multScore = GameManager.Instance.GetMult().ToString();
 
         while (boxScore.Length < 4)
         {
             boxScore = "0" + boxScore;
         }
 
+        while (multScore.Length < 2)
+        {
+            multScore = "0" + multScore;
+        }
+
         boxScoreText.text = boxScore;
+        multText.text = multScore;
         UpdateProductivityBar();
     }
 

@@ -26,13 +26,17 @@ public class GameManager : MonoBehaviour
     private int boxScore = 0;
     private float timeLeft = 0f;
 
+    // Cat Reaction Variables
+    [SerializeField] private SpriteRenderer CatSpriteRenderer;
+    [SerializeField] private List<Sprite> CatReactionSprites = new List<Sprite>();
+
     [SerializeField] private LevelLoader levelLoader;
 
     // Multiplier Fields
     private int currentMultiplerIndex = 0;
     private int actionsTilMultIncrease;
     private int maxActionsTilMultIncrease = 5;
-    private int[] multiplierLevels = { 1, 2, 4, 8 };
+    private int[] multiplierLevels = { 1, 2, 4, 8, 16 };
 
     // Player Life
     [Range(0, 100)] private int productivity = 50;
@@ -56,6 +60,11 @@ public class GameManager : MonoBehaviour
     public int GetScore()
     {
         return boxScore;
+    }
+
+    public int GetMult()
+    {
+        return multiplierLevels[currentMultiplerIndex];
     }
 
     public float GetTime()
@@ -104,6 +113,8 @@ public class GameManager : MonoBehaviour
             }
             boxScore += (scoreAdjustment * multiplierLevels[currentMultiplerIndex]);
         }
+
+        UpdateCatReaction();
     }
 
     // Scene Management
@@ -120,6 +131,25 @@ public class GameManager : MonoBehaviour
     public void BackToMenu()
     {
         levelLoader.LoadNextLevel("MainMenu");
+    }
+
+    private void UpdateCatReaction()
+    {
+        switch (productivity)
+        {
+            case > 75:
+                CatSpriteRenderer.sprite = CatReactionSprites[0];
+                break;
+            case > 50:
+                CatSpriteRenderer.sprite = CatReactionSprites[1];
+                break;
+            case > 25:
+                CatSpriteRenderer.sprite = CatReactionSprites[2];
+                break;
+            default:
+                CatSpriteRenderer.sprite = CatReactionSprites[3];
+                break;
+        }
     }
 
 }

@@ -33,9 +33,13 @@ public class AssemblyLine : MonoBehaviour
 
     [SerializeField] private PlayerInput playerInput;
 
-    [Header("Animation")]
+    [Header("Animation And Sprites")]
     [SerializeField] private Animator beltAnimator;
     [SerializeField] private Animator catAnimator;
+
+    [SerializeField] private GameObject OosSign;
+    [SerializeField] private GameObject CatPackager;
+    [SerializeField] private GameObject ButtonSign;
 
     // Start is called before the first frame update
     void Start()
@@ -168,6 +172,9 @@ public class AssemblyLine : MonoBehaviour
 
     public void Disable() 
     {
+        ButtonSign.gameObject.SetActive(false);
+        CatPackager.gameObject.SetActive(false);
+        OosSign.gameObject.SetActive(true);
         beltAnimator.enabled = false;
         isDisabled = true;
     }
