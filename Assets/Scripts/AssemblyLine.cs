@@ -6,6 +6,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.InputSystem;
 
 public class AssemblyLine : MonoBehaviour
 {
@@ -18,54 +19,45 @@ public class AssemblyLine : MonoBehaviour
     [SerializeField] private float minInteractionDistance = 0.5f;
     [SerializeField] private Transform interactionZone;
 
-    [SerializeField] private KeyCode packageKeyCode;
-    [SerializeField] private KeyCode yeetKeyCode;
-
     [SerializeField] private DeliveryTruck deliveryTruck;
 
     [SerializeField] private TextMeshProUGUI packageKeyText;
     [SerializeField] private TextMeshProUGUI yeetKeyText;
 
-    [SerializeField] private int assemblyLineNumber;
+    [SerializeField] public int assemblyLineNumber;
+    private string packageActionName = "AssemblyLine_P";
+    private string yeetActionName = "AssemblyLine_S";
 
     [SerializeField] private List<Sprite> boxSprites;
+
+    [SerializeField] private PlayerInput playerInput;
+
+    [SerializeField] private Animator animator;
+    private bool isDisabled = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        switch (assemblyLineNumber)
-        {
-            case 1:
-                packageKeyCode = GameSettings.Instance.PackageKeyCode_1;
-                yeetKeyCode = GameSettings.Instance.YeetKeyCode_1;
-                break;
-            case 2:
-                packageKeyCode = GameSettings.Instance.PackageKeyCode_2;
-                yeetKeyCode = GameSettings.Instance.YeetKeyCode_2;
-                break;
-            case 3:
-                packageKeyCode = GameSettings.Instance.PackageKeyCode_3;
-                yeetKeyCode = GameSettings.Instance.YeetKeyCode_3;
-                break;
-            case 4:
-                packageKeyCode = GameSettings.Instance.PackageKeyCode_4;
-                yeetKeyCode = GameSettings.Instance.YeetKeyCode_4;
-                break;
-        }
+        packageActionName += assemblyLineNumber;
+        yeetActionName += assemblyLineNumber;
 
-        packageKeyText.text = packageKeyCode.ToString();
-        yeetKeyText.text = yeetKeyCode.ToString();
+        packageKeyText.text = playerInput.actions[packageActionName].bindings[0].ToDisplayString();
+        yeetKeyText.text = playerInput.actions[yeetActionName].bindings[0].ToDisplayString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(packageKeyCode))
+        if (isDisabled)
+            return;
+
+        //if (Input.GetKeyDown(packageKeyCode))
+        if (playerInput.actions[packageActionName].triggered)
         {
             PackageItem();
         }
 
-        if (Input.GetKeyDown(yeetKeyCode))
+        if (playerInput.actions[yeetActionName].triggered)
         {
             YeetItem();
         }
@@ -172,10 +164,16 @@ public class AssemblyLine : MonoBehaviour
         return closestItem;
     }
 
-    // Draw on debug to show interaction distance on assembly line
-    void OnDrawGizmos()
+    public void Disable() 
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(interactionZone.position, minInteractionDistance);
+        animator.enabled = false;
+        isDisabled = true;
     }
+
+    // Draw on debug to show interaction distance on assembly line
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(interactionZone.position, minInteractionDistance);
+    //}
 }

@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    #region
+    //singleton
+    public static SpawnManager Instance { set; get; }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    //singleton
+    #endregion
+
     [SerializeField] private GameObject[] goodItems;
     [SerializeField] private GameObject[] badItems;
     [SerializeField] private AssemblyLine[] assemblyLines;
@@ -19,10 +36,15 @@ public class SpawnManager : MonoBehaviour
             Debug.LogError("No Bad Items Found in Spawn Manager");
         if (assemblyLines.Length == 0)
             Debug.LogError("No Assembly Lines Found in Spawn Manager");
-
+        
         foreach (AssemblyLine assemblyLineToSpawnAt in assemblyLines) 
         {
-            StartCoroutine(SpawnItems(assemblyLineToSpawnAt));
+            Debug.Log(assemblyLineToSpawnAt.assemblyLineNumber.ToString());
+            Debug.Log(GameSettings.Instance.NumberOfAssemblyLines);
+            if (assemblyLineToSpawnAt.assemblyLineNumber <= GameSettings.Instance.NumberOfAssemblyLines)
+                StartCoroutine(SpawnItems(assemblyLineToSpawnAt));
+            else
+                assemblyLineToSpawnAt.Disable();
         }
     }
 

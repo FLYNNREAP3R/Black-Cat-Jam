@@ -24,7 +24,6 @@ public class UiManager : MonoBehaviour
     //singleton
     #endregion
 
-    public TextMeshProUGUI timerText;
     public TextMeshProUGUI boxScoreText;
     public Image productivityBar;
     public GameObject gameOverUI;
@@ -35,16 +34,21 @@ public class UiManager : MonoBehaviour
     {
         playerUI.SetActive(true);
         gameOverUI.SetActive(false);
-        timerText.text = "";
-        boxScoreText.text = "Score: ";
+        boxScoreText.text = "0000";
         UpdateProductivityBar();
     }
 
     // Update is called once per frame
     void Update()
     {
-        boxScoreText.text = "Score: " + GameManager.Instance.GetScore();
-        timerText.text = ((int)GameManager.Instance.GetTime()).ToString();
+        var boxScore = GameManager.Instance.GetScore().ToString();
+
+        while (boxScore.Length < 4)
+        {
+            boxScore = "0" + boxScore;
+        }
+
+        boxScoreText.text = boxScore;
         UpdateProductivityBar();
     }
 

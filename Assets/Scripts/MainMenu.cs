@@ -45,9 +45,4 @@ public class MainMenu : MonoBehaviour
     {
         settingsUI.SetActive(isActive);
     }
-
-    public void ScreenShake()
-    {
-        Shake.Instance.StopShaking();
-    }
 }
