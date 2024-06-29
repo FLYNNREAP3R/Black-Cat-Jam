@@ -760,6 +760,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1811864637}
     m_Modifications:
+    - target: {fileID: 1779663335357032383, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6d6d603480418ea41868b330fc3be434, type: 2}
+    - target: {fileID: 1920275691642246352, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3034914644087926012, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.97
@@ -836,6 +844,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyLine_02
       objectReference: {fileID: 0}
+    - target: {fileID: 7602438638667628957, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1431649195, guid: f24872821331b2b4fa2218ae997f5e0a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2414,6 +2426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1811864637}
     m_Modifications:
+    - target: {fileID: 1779663335357032383, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 37b79a86a2d4a8b4fb4c0f23ea223f1e, type: 2}
     - target: {fileID: 3034914644087926012, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.97
@@ -2470,6 +2486,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3956684222492105665, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956684222492105665, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.627
+      objectReference: {fileID: 0}
     - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: playerInput
       value: 
@@ -2490,6 +2514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyLine_04
       objectReference: {fileID: 0}
+    - target: {fileID: 7602438638667628957, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1190398830, guid: 20c8c18db4abe584ea1415f6d95d882c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3931,6 +3959,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1779663335357032383, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2124b11b1913a148bc8fb8605e4d298, type: 2}
     - target: {fileID: 3034914644087926012, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.97
@@ -3982,6 +4014,14 @@ PrefabInstance:
     - target: {fileID: 3034914644087926012, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956684222492105665, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956684222492105665, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.627
       objectReference: {fileID: 0}
     - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: playerInput
@@ -4039,6 +4079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssemblyLine_03
       objectReference: {fileID: 0}
+    - target: {fileID: 7602438638667628957, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2093839178, guid: cc02d86127d89ad4383f8d1a3831cad3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 
 public class AssemblyLine : MonoBehaviour
 {
+    private bool isDisabled = false;
 
     [SerializeField] private GameObject Test;
     [SerializeField] private Transform SpawnLocation;
@@ -32,8 +33,9 @@ public class AssemblyLine : MonoBehaviour
 
     [SerializeField] private PlayerInput playerInput;
 
-    [SerializeField] private Animator animator;
-    private bool isDisabled = false;
+    [Header("Animation")]
+    [SerializeField] private Animator beltAnimator;
+    [SerializeField] private Animator catAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -166,7 +168,7 @@ public class AssemblyLine : MonoBehaviour
 
     public void Disable() 
     {
-        animator.enabled = false;
+        beltAnimator.enabled = false;
         isDisabled = true;
     }
 
