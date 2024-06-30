@@ -2930,7 +2930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productivityBar: {fileID: 1653258365}
-  gameOverUI: {fileID: 0}
   playerUI: {fileID: 1378701256}
   numbers:
   - {fileID: 599692946, guid: 5d6176a6c66e2e849ab047748dcb38c2, type: 3}
@@ -4680,10 +4679,6 @@ PrefabInstance:
     - target: {fileID: 3034914644087926012, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3095087513714079396, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: playerInput
