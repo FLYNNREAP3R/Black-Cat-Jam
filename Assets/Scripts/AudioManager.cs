@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (AudioSource source in AudioSources)
         {
-            source.volume = volumeSlider.value;
+            source.volume = GameSettings.Instance.volume / 100f;
         }
     }
 }

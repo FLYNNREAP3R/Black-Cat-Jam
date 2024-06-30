@@ -93,9 +93,7 @@ public class GameManager : MonoBehaviour
             // Check if Game Over
             if (productivity <= 0)
             {
-                Time.timeScale = 0f;
-                Shake.Instance.StopShaking();
-                UiManager.Instance.GameOver();
+                levelLoader.LoadNextLevel("GameOver");
             }
         }
         // Good Score
@@ -113,22 +111,6 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateCatReaction();
-    }
-
-    // Scene Management
-    public void RetryGame()
-    {
-        levelLoader.LoadNextLevel("SampleScene");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-    public void BackToMenu()
-    {
-        levelLoader.LoadNextLevel("MainMenu");
     }
 
     private void UpdateCatReaction()

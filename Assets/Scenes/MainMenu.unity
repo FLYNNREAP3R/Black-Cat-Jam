@@ -1536,6 +1536,8 @@ MonoBehaviour:
   creditsUI: {fileID: 0}
   settingsUI: {fileID: 0}
   levelLoader: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  audioManager: {fileID: 0}
   transitionAnimation: {fileID: 0}
 --- !u!114 &186304643
 MonoBehaviour:
@@ -6641,6 +6643,8 @@ MonoBehaviour:
   creditsUI: {fileID: 0}
   settingsUI: {fileID: 0}
   levelLoader: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  audioManager: {fileID: 0}
   transitionAnimation: {fileID: 0}
 --- !u!114 &1068906592
 MonoBehaviour:
@@ -7814,9 +7818,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1958107862}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: ChangeVolume
+      - m_Target: {fileID: 1708981442}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: UpdateVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9219,7 +9223,7 @@ GameObject:
   - component: {fileID: 1708981450}
   m_Layer: 5
   m_Name: MainMenu
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9241,6 +9245,8 @@ MonoBehaviour:
   creditsUI: {fileID: 351614251}
   settingsUI: {fileID: 954168882}
   levelLoader: {fileID: 5996393716938116437}
+  volumeSlider: {fileID: 1316935283}
+  audioManager: {fileID: 1958107862}
   transitionAnimation: {fileID: 5996393716938116436}
 --- !u!114 &1708981443
 MonoBehaviour:
@@ -10454,6 +10460,8 @@ MonoBehaviour:
   creditsUI: {fileID: 0}
   settingsUI: {fileID: 0}
   levelLoader: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  audioManager: {fileID: 0}
   transitionAnimation: {fileID: 0}
 --- !u!114 &1793249813
 MonoBehaviour:

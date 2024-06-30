@@ -560,6 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667920050053957861}
   - component: {fileID: 2033636997175669414}
+  - component: {fileID: 1137024687086819761}
   m_Layer: 0
   m_Name: PackageCatVFX
   m_TagString: Untagged
@@ -576,7 +577,7 @@ Transform:
   m_GameObject: {fileID: 3095087513714079396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.317, y: 2.319, z: -0.010017699}
+  m_LocalPosition: {x: 1.317, y: 2.319, z: -0.0100177}
   m_LocalScale: {x: 0.46476144, y: 0.46476144, z: 0.46476144}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -634,6 +635,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1137024687086819761
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095087513714079396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36a366569ac7bde449d273d90aeea0a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3230627510207865804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1084,7 @@ MonoBehaviour:
   - {fileID: -494834895, guid: 955a22958bddb1548a59ed953ebb9c33, type: 3}
   playerInput: {fileID: 0}
   beltAnimator: {fileID: 1779663335357032383}
-  catAnimator: {fileID: 0}
+  catAnimator: {fileID: 1137024687086819761}
   OosSign: {fileID: 5185732459311281437}
   CatPackager: {fileID: 3095087513714079396}
   ButtonSign: {fileID: 908520394890086356}

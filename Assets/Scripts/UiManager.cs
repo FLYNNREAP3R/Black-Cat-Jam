@@ -26,7 +26,6 @@ public class UiManager : MonoBehaviour
     #endregion
 
     public Image productivityBar;
-    public GameObject gameOverUI;
     public GameObject playerUI;
 
     [Header("Sprites")]
@@ -46,7 +45,6 @@ public class UiManager : MonoBehaviour
     void Start()
     {
         playerUI.SetActive(true);
-        gameOverUI.SetActive(false);
         UpdateProductivityBar();
     }
 
@@ -64,12 +62,6 @@ public class UiManager : MonoBehaviour
     void UpdateProductivityBar()
     {
         productivityBar.fillAmount = (float)GameManager.Instance.GetProductivity() / 100f;
-    }
-
-    public void GameOver()
-    {
-        playerUI.SetActive(false);
-        gameOverUI.SetActive(true);
     }
 
     private void UpdateDigit(int number, SpriteRenderer renderer)

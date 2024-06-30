@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private GameObject settingsUI;
     [SerializeField] private LevelLoader levelLoader;
+
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private AudioManager audioManager;
 
     [SerializeField] Animator transitionAnimation;
 
@@ -53,5 +57,11 @@ public class MainMenu : MonoBehaviour
     {
         mainMenuUI.SetActive(!isActive);
         settingsUI.SetActive(isActive);
+    }
+
+    public void UpdateVolume()
+    {
+        GameSettings.Instance.volume = (int)(volumeSlider.value * 100);
+        audioManager.ChangeVolume();
     }
 }

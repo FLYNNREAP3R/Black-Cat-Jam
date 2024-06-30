@@ -72,6 +72,7 @@ public class AssemblyLine : MonoBehaviour
     private void PackageItem()
     {
         GameObject itemToPackage = GetClosestItem()?.gameObject;
+        catAnimator.SetTrigger("Package");
 
         if (itemToPackage != null)
         {
@@ -104,13 +105,13 @@ public class AssemblyLine : MonoBehaviour
         {
             GameManager.Instance.UpdateScore(-1);
         }
-
-
     }
 
     private void YeetItem()
     {
-        GameObject itemToYeet =GetClosestItem()?.gameObject;
+        GameObject itemToYeet = GetClosestItem()?.gameObject;
+
+        catAnimator.SetTrigger("Yeet");
 
         if (itemToYeet != null)
         {
@@ -131,9 +132,8 @@ public class AssemblyLine : MonoBehaviour
         {
             GameManager.Instance.UpdateScore(-1);
         }
-
     }
-    
+
     //Spawn An Item
     public void SpawnItem(GameObject gameObject)
     {
