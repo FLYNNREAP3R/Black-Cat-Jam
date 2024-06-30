@@ -12,7 +12,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         GameObject[] soundSources = GameObject.FindGameObjectsWithTag("SoundSource");
-        Debug.Log(soundSources.Length);
 
         foreach (GameObject soundSource in soundSources)
         {
