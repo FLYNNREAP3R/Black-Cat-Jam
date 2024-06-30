@@ -634,6 +634,7 @@ GameObject:
   - component: {fileID: 396530341}
   - component: {fileID: 396530340}
   - component: {fileID: 396530342}
+  - component: {fileID: 396530343}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -705,6 +706,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &396530343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396530339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0791650af809103409961832374fc7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 0}
 --- !u!1 &430208304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,7 +3544,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab94eb31898d7e4cb7a3d36f06d5d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multText: {fileID: 0}
   productivityBar: {fileID: 1653258365}
   gameOverUI: {fileID: 1208361924}
   playerUI: {fileID: 1378701256}
@@ -5682,6 +5695,10 @@ PrefabInstance:
     - target: {fileID: 3034914644087926012, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095087513714079396, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: playerInput

@@ -8,6 +8,7 @@ TagManager:
   - Bad
   - Package
   - Yeet
+  - SoundSource
   layers:
   - Default
   - TransparentFX

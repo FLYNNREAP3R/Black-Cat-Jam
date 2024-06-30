@@ -6720,7 +6720,7 @@ GameObject:
   - component: {fileID: 1080169681}
   m_Layer: 5
   m_Name: ExitButton
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8203,7 +8203,7 @@ GameObject:
   - component: {fileID: 1501242843}
   m_Layer: 5
   m_Name: StartGameButton
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9713,7 +9713,7 @@ GameObject:
   - component: {fileID: 1750477202}
   m_Layer: 5
   m_Name: SettingsBtn
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11276,7 +11276,7 @@ GameObject:
   - component: {fileID: 1952819603}
   m_Layer: 5
   m_Name: TutorialButton
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11640,7 +11640,7 @@ GameObject:
   - component: {fileID: 1958107862}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11657,8 +11657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0791650af809103409961832374fc7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSources:
-  - {fileID: 1958107863}
   volumeSlider: {fileID: 1316935283}
 --- !u!82 &1958107863
 AudioSource:
