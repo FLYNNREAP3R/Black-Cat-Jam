@@ -15,10 +15,15 @@ public class AudioManager : MonoBehaviour
 
         foreach (GameObject soundSource in soundSources)
         {
-            AudioSource audioSource = soundSource.GetComponent<AudioSource>();
+            AudioSource[] audioSources = soundSource.GetComponents<AudioSource>();
 
-            if (audioSource != null)
-                AudioSources.Add(audioSource);
+            if (audioSources != null)
+            {
+                foreach(var audioSource in audioSources)
+                {
+                    AudioSources.Add(audioSource);
+                }
+            }
         }
 
         if (AudioSources == null)
