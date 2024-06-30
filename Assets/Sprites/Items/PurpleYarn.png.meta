@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df3b182e29e0a2c48b90e252d4622758
+guid: babc0b2fcc8d82d4db433e1a1ee9c2b7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,64 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bone_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 120
-        width: 130
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7f1bc7e7c4f5fd4eb0f0b65156b3d6b
-      internalID: 602747820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bone_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 60
-        width: 130
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3db025a098599d543b91470544ee244b
-      internalID: -1795470635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bone_2
+      name: GreenYarn_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
-        height: 60
+        width: 162
+        height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88bfadc844ac59e48bcb3f2e919c41d3
-      internalID: -1052615123
+      spriteID: 76450192a45564a43b80b2c150ce3935
+      internalID: -1974077261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenYarn_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 162
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac2ff49a28b971478621a5014e0abdc
+      internalID: -588731071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenYarn_7
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 162
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67be87e2580fac42b05ba39e1093599
+      internalID: 2038085597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenYarn_8
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 0
+        width: 162
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e339136255337e6428a25ed7c410ce1e
+      internalID: -35174627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenYarn_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 162
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef223ee34af4f9641b4dfc7d74402608
+      internalID: -964342232
       vertices: []
       indices: 
       edges: []
@@ -183,9 +225,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bone_0: 602747820
-      Bone_1: -1795470635
-      Bone_2: -1052615123
+      GreenYarn_0: -222053873
+      GreenYarn_1: -2041463158
+      GreenYarn_10: 1887669439
+      GreenYarn_11: 1926896203
+      GreenYarn_12: -1020087389
+      GreenYarn_13: 1870280224
+      GreenYarn_14: -171029189
+      GreenYarn_2: 37614516
+      GreenYarn_3: -1124123576
+      GreenYarn_4: -2134186303
+      GreenYarn_5: -1974077261
+      GreenYarn_6: -588731071
+      GreenYarn_7: 2038085597
+      GreenYarn_8: -35174627
+      GreenYarn_9: -964342232
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

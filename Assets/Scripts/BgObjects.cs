@@ -6,58 +6,28 @@ using UnityEngine.AI;
 public class BgObjects : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    private List<GameObject> rightChildren;
-    private List<GameObject> leftChildren;
-
-    [SerializeField] private GameObject background;
-
-    [SerializeField] private List<Sprite> sprites;
-
-    private void Start()
-    {
-        rightChildren = new List<GameObject>();
-
-        Transform[] rightChildrenTransforms = GameObject.Find("Right").GetComponentsInChildren<Transform>();
-
-        foreach (Transform childTransform in rightChildrenTransforms)
-        {
-            rightChildren.Add(childTransform.gameObject);
-            // Give Random Sprite
-        }
-
-        leftChildren = new List<GameObject>();
-
-        Transform[] leftChildrenTransforms = GameObject.Find("Left").GetComponentsInChildren<Transform>();
-
-        foreach (Transform childTransform in leftChildrenTransforms)
-        {
-            leftChildren.Add(childTransform.gameObject);
-            // Give Random Sprite
-        }
-    }
+    [SerializeField] private bool isRight;
 
     private void FixedUpdate()
     {
-        foreach (GameObject child in rightChildren) 
-        {
-            if (child.transform.position.x > 11)
+        if (isRight) {
+            if (transform.position.x > 11)
             {
-                child.transform.position = new Vector3(-12, child.transform.position.y, child.transform.position.z);
+                transform.position = new Vector3(-12, transform.position.y, transform.position.z);
             } else
             {
-                child.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World);
+                transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World);
             }
         }
-
-        foreach (GameObject child in leftChildren)
+        else
         {
-            if (child.transform.position.x < -12)
+            if (transform.position.x < -12)
             {
-                child.transform.position = new Vector3(11, child.transform.position.y, child.transform.position.z);
+                transform.position = new Vector3(11, transform.position.y, transform.position.z);
             }
             else
             {
-                child.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.World);
+                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.World);
             }
         }
     }

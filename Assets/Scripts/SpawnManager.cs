@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,12 +22,16 @@ public class SpawnManager : MonoBehaviour
     //singleton
     #endregion
 
+    [Header("Lists")]
     [SerializeField] private GameObject[] goodItems;
     [SerializeField] private GameObject[] badItems;
     [SerializeField] private AssemblyLine[] assemblyLines;
 
-    [SerializeField] private float timeBetweenSpawnMin = 1;
-    [SerializeField] private float timeBetweenSpawnMax = 3;
+    [Header("SpawnTimes")]
+    [SerializeField] private int currentLevel;
+    [SerializeField] private List<SpawnLevelInfo> levels;
+
+
 
     private void Start()
     {
@@ -36,7 +41,9 @@ public class SpawnManager : MonoBehaviour
             Debug.LogError("No Bad Items Found in Spawn Manager");
         if (assemblyLines.Length == 0)
             Debug.LogError("No Assembly Lines Found in Spawn Manager");
-        
+        if (levels?.Count == 0)
+            Debug.LogError("No Level Info Found in Spawn Manager");
+
         foreach (AssemblyLine assemblyLineToSpawnAt in assemblyLines) 
         {
             if (assemblyLineToSpawnAt.assemblyLineNumber <= GameSettings.Instance.NumberOfAssemblyLines)
@@ -44,17 +51,19 @@ public class SpawnManager : MonoBehaviour
             else
                 assemblyLineToSpawnAt.Disable();
         }
+
+        StartCoroutine(IncreaseLevel());
     }
 
     private void SpawnGoodItem(AssemblyLine line)
     {
-        GameObject itemToSpawn = goodItems[Random.Range(0, goodItems.Length)];
+        GameObject itemToSpawn = goodItems[UnityEngine.Random.Range(0, goodItems.Length)];
         line.SpawnItem(itemToSpawn);
     }
 
     private void SpawnBadItem(AssemblyLine line)
     {
-        GameObject itemToSpawn = badItems[Random.Range(0, goodItems.Length)];
+        GameObject itemToSpawn = badItems[UnityEngine.Random.Range(0, badItems.Length)];
         line.SpawnItem(itemToSpawn);
     }
 
@@ -62,11 +71,11 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
-            float spawnTimer = Random.Range(timeBetweenSpawnMin, timeBetweenSpawnMax);
+            float spawnTimer = UnityEngine.Random.Range(levels[currentLevel - 1].timeBetweenSpawnMin, levels[currentLevel - 1].timeBetweenSpawnMax);
 
             yield return new WaitForSeconds(spawnTimer);
 
-            if (Random.Range(0f, 1f) > 0.5)
+            if (UnityEngine.Random.Range(0f, 1f) <= (levels[currentLevel - 1].goodItemSpawnRate) / 100f)
             {
                 SpawnGoodItem(assemblyLineToSpawnAt);
             } else
@@ -74,5 +83,28 @@ public class SpawnManager : MonoBehaviour
                 SpawnBadItem(assemblyLineToSpawnAt);
             }
         }
+    }
+
+    private IEnumerator IncreaseLevel()
+    {
+        while (currentLevel < levels.Count)
+        {
+            yield return new WaitForSeconds(levels[currentLevel - 1].timeUntilNextLevel);
+
+            Debug.Log("Increasing Difficulty....");
+
+            currentLevel++;
+        }
+    }
+
+    [Serializable]
+    public struct SpawnLevelInfo
+    {
+        public float timeBetweenSpawnMin;
+        public float timeBetweenSpawnMax;
+
+        public float goodItemSpawnRate;
+
+        public float timeUntilNextLevel;
     }
 }

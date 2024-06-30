@@ -153,15 +153,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodItems:
   - {fileID: 6010308644604625225, guid: ca7caeff88c1b6345a264bbf0fe55dee, type: 3}
+  - {fileID: 6010308644604625225, guid: f029fd5f33cf9314dbbb4625097f1e14, type: 3}
+  - {fileID: 6010308644604625225, guid: 75b0408b2623734409c10c0be80252df, type: 3}
+  - {fileID: 6010308644604625225, guid: fe1f17de447761243880ecd744f3babf, type: 3}
   badItems:
   - {fileID: 6010308644604625225, guid: bd598292c8daf1a44988f1b102f110ac, type: 3}
+  - {fileID: 6010308644604625225, guid: 1d89f508e8e3796438108ac0d83e1a41, type: 3}
   assemblyLines:
   - {fileID: 1999810095}
   - {fileID: 1227067078}
   - {fileID: 199191537}
   - {fileID: 591657939}
-  timeBetweenSpawnMin: 0.5
-  timeBetweenSpawnMax: 4
+  currentLevel: 1
+  levels:
+  - timeBetweenSpawnMin: 1
+    timeBetweenSpawnMax: 4
+    goodItemSpawnRate: 90
+    timeUntilNextLevel: 20
+  - timeBetweenSpawnMin: 1
+    timeBetweenSpawnMax: 2
+    goodItemSpawnRate: 50
+    timeUntilNextLevel: 20
 --- !u!4 &7504445
 Transform:
   m_ObjectHideFlags: 0

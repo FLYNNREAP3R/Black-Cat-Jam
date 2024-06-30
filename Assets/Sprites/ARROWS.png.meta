@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df3b182e29e0a2c48b90e252d4622758
+guid: 20c54652246281042866572c079c3fdf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bone_0
+      name: ARROWS_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
-        width: 130
-        height: 60
+        y: 400
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,41 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7f1bc7e7c4f5fd4eb0f0b65156b3d6b
-      internalID: 602747820
+      spriteID: 24757194d5164a94aaac7c600e480ebd
+      internalID: 873733085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bone_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 60
-        width: 130
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3db025a098599d543b91470544ee244b
-      internalID: -1795470635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bone_2
+      name: ARROWS_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
-        height: 60
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88bfadc844ac59e48bcb3f2e919c41d3
-      internalID: -1052615123
+      spriteID: c809bf23c9a5965439a4208f7becca6a
+      internalID: 1622329024
       vertices: []
       indices: 
       edges: []
@@ -183,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bone_0: 602747820
-      Bone_1: -1795470635
-      Bone_2: -1052615123
+      ARROWS_0: 873733085
+      ARROWS_1: 1622329024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

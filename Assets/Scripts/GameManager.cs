@@ -105,7 +105,8 @@ public class GameManager : MonoBehaviour
             if (actionsTilMultIncrease <= 0)
             {
                 actionsTilMultIncrease = maxActionsTilMultIncrease;
-                currentMultiplerIndex++;
+                if (currentMultiplerIndex < multiplierLevels.Length - 1)
+                    currentMultiplerIndex++;
             }
             boxScore += (scoreAdjustment * multiplierLevels[currentMultiplerIndex]);
         }
