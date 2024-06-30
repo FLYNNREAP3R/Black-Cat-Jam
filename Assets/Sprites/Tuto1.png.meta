@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67cb34946d6b2674d9dc1af20da21c64
+guid: 7b963d9fe58eb68488dfe8340ff9c566
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +107,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Home_0
+      name: Tuto1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 160
-        height: 160
+        y: 720
+        width: 1150
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b3abb8d02c0a048822199ebd8ed566
-      internalID: 2171171
+      spriteID: 3559072f65d7b9448a4368477e3d0be4
+      internalID: -773835546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Home_1
+      name: Tuto1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 160
-        height: 160
+        x: 1150
+        y: 720
+        width: 1150
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1e2d5aa98e0f54478f0b791f2bcac9b
-      internalID: -151188969
+      spriteID: 2c727e24890241d4489b03e65b207b40
+      internalID: 1898148595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1150
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82f48f04def4044e80a884a02b8b213
+      internalID: 1534547659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuto1_3
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 0
+        width: 1150
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5332cfecd1c1e2843aae63224b3c965a
+      internalID: -2066687449
       vertices: []
       indices: 
       edges: []
@@ -188,8 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Home_0: 2171171
-      Home_1: -151188969
+      Tuto1_0: -773835546
+      Tuto1_1: 1898148595
+      Tuto1_2: 1534547659
+      Tuto1_3: -2066687449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

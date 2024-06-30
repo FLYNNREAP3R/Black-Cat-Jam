@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private GameObject settingsUI;
+    [SerializeField] private GameObject difficultyUI;
     [SerializeField] private LevelLoader levelLoader;
 
     [SerializeField] private Slider volumeSlider;
@@ -18,15 +19,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] Animator transitionAnimation;
 
-
-
-    private void Start()
-    {
-    }
-
     public void PlayGame()
     {
-        levelLoader.LoadNextLevel("SampleScene");
+        SetActiveDifficulty(true);
     }
 
     public void QuitGame()
@@ -59,9 +54,41 @@ public class MainMenu : MonoBehaviour
         settingsUI.SetActive(isActive);
     }
 
+    public void SetActiveDifficulty(bool isActive)
+    {
+        mainMenuUI.SetActive(!isActive);
+        tutorialUI.SetActive(!isActive);
+        difficultyUI.SetActive(isActive);
+
+
+    }
+
     public void UpdateVolume()
     {
         GameSettings.Instance.volume = (int)(volumeSlider.value * 100);
         audioManager.ChangeVolume();
     }
+
+    public void AssemblyLineOne()
+    {
+        GameSettings.Instance.NumberOfAssemblyLines = 1;
+        levelLoader.LoadNextLevel("SampleScene");
+    }
+    public void AssemblyLineTwo()
+    {
+        GameSettings.Instance.NumberOfAssemblyLines = 2;
+        levelLoader.LoadNextLevel("SampleScene");
+    }
+    public void AssemblyLineThree()
+    {
+        GameSettings.Instance.NumberOfAssemblyLines = 3;
+        levelLoader.LoadNextLevel("SampleScene");
+    }
+    public void AssemblyLineFour()
+    {
+        GameSettings.Instance.NumberOfAssemblyLines = 4;
+        levelLoader.LoadNextLevel("SampleScene");
+    }
+
+
 }

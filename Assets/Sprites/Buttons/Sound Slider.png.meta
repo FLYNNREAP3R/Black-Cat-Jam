@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67cb34946d6b2674d9dc1af20da21c64
+guid: db1fc2320195e7743aed2a8a26811438
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +107,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,43 +136,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Home_0
+      name: Sound Slider_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 160
+        y: 220
+        width: 1200
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b3abb8d02c0a048822199ebd8ed566
-      internalID: 2171171
+      spriteID: 0acce88ed4d9c1046a1ee4e4a992981a
+      internalID: 3369977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Home_1
+      name: Sound Slider_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 760
         y: 0
-        width: 160
-        height: 160
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1e2d5aa98e0f54478f0b791f2bcac9b
-      internalID: -151188969
+      spriteID: 077d6817c02e82e4583c50cee88e0fd5
+      internalID: -165952645
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Home_0: 2171171
-      Home_1: -151188969
+      Sound Slider_0: 3369977
+      Sound Slider_1: -165952645
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

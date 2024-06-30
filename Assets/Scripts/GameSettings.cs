@@ -27,5 +27,4 @@ public class GameSettings : MonoBehaviour
     [SerializeField] public int volume = 50;
     [SerializeField] public int NumberOfAssemblyLines = 2;
 
-
 }
