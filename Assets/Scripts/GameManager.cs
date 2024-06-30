@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         boxScore = 0;
         actionsTilMultIncrease = maxActionsTilMultIncrease;
         productivity = 50;
+        GetComponents<AudioSource>().First(x => x.clip.name == "cat-happy").Play();
     }
 
     // Update is called once per frame
@@ -119,15 +121,27 @@ public class GameManager : MonoBehaviour
         switch (productivity)
         {
             case > 75:
+                if(CatSpriteRenderer.sprite != CatReactionSprites[0]) {
+                    GetComponents<AudioSource>().First(x => x.clip.name == "cat-super").Play();
+                }
                 CatSpriteRenderer.sprite = CatReactionSprites[0];
                 break;
             case > 50:
+                if(CatSpriteRenderer.sprite != CatReactionSprites[1]) {
+                    GetComponents<AudioSource>().First(x => x.clip.name == "cat-happy").Play();
+                }
                 CatSpriteRenderer.sprite = CatReactionSprites[1];
                 break;
             case > 25:
+                if(CatSpriteRenderer.sprite != CatReactionSprites[2]) {
+                    GetComponents<AudioSource>().First(x => x.clip.name == "cat-neutral").Play();
+                }
                 CatSpriteRenderer.sprite = CatReactionSprites[2];
                 break;
             default:
+                if(CatSpriteRenderer.sprite != CatReactionSprites[3]) {
+                    GetComponents<AudioSource>().First(x => x.clip.name == "cat-angry").Play();
+                }
                 CatSpriteRenderer.sprite = CatReactionSprites[3];
                 break;
         }
