@@ -1243,6 +1243,38 @@ PrefabInstance:
       propertyPath: AudioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 1d651fe3b55ce544d99f30cc0e3a1fed, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 811d0fa428056d04ca67b7f7e8bb36f3, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c914a86fde161c489a601d81bb68421, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d651fe3b55ce544d99f30cc0e3a1fed, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 527eb5790f544674087bf0134dfc8ff1, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c74530bb88d4c704cb64a31f4cd0a672, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c9582fa6a71968408b582b1e1161557, type: 3}
     - target: {fileID: 5185732459311281437, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3219,6 +3251,38 @@ PrefabInstance:
       propertyPath: AudioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: e9cfd9accd4d57742a84b5693200ef56, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: da72cd6725fc52c43833e232d255800e, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 160d295a23eaf5444ba4e61ed449db8b, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9cfd9accd4d57742a84b5693200ef56, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: db2a00a2b5a7dc4448cd5c56557a3dc0, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 34c4973e370e8444b969c6dee6f981bc, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 554859f970d3e264d91995779aab3127, type: 3}
     - target: {fileID: 5185732459311281437, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4539,6 +4603,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 57059ebf568bf8f42b1ff1de3291d21d, type: 3}
     - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: boxSprites.Array.data[0]
       value: 
       objectReference: {fileID: -1097972534, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
@@ -4562,6 +4630,34 @@ PrefabInstance:
       propertyPath: boxSprites.Array.data[5]
       value: 
       objectReference: {fileID: -1820173723, guid: 4ba91221a6ecbca43a93fbc20b90eb76, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e155f0b29f458ee499ec135af5c2649f, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b5689602597da7a41a7b52622388450d, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57059ebf568bf8f42b1ff1de3291d21d, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a778406bc6058fc48934c426056f6488, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a9b54ce5f99569429a613d7e5db61b5, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f04c8c966ea9cf4a879d8831570e0cc, type: 3}
     - target: {fileID: 5185732459311281437, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5878,6 +5974,38 @@ PrefabInstance:
       propertyPath: AudioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 3d43663634dfd3946b4c35c9416b3f86, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c93282c579982c4983703787a721ae9, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 70901dcfd6b243c4b8f6dc26c5c4b975, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: HitAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d43663634dfd3946b4c35c9416b3f86, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f3499a6fc7b41a140a015f32d02c000d, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e7eca5c0ea869f43b9ef2f8c64866dc, type: 3}
+    - target: {fileID: 4721740066720395792, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
+      propertyPath: YeetAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: de32cb07cbef2e943bd44ea987d99db6, type: 3}
     - target: {fileID: 7153087636805392333, guid: 3dbe31a6ba158024382c564255fcb47a, type: 3}
       propertyPath: m_Name
       value: AssemblyLine_01

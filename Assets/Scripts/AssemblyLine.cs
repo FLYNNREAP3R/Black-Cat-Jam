@@ -42,7 +42,8 @@ public class AssemblyLine : MonoBehaviour
     [SerializeField] private GameObject CatPackager;
     [SerializeField] private GameObject ButtonSign;
 
-    [SerializeField] private List<AudioClip> AudioClips;
+    [SerializeField] private List<AudioClip> HitAudioClips;
+    [SerializeField] private List<AudioClip> YeetAudioClips;
     private List<AudioSource> AudioSources;
 
     // Start is called before the first frame update
@@ -81,12 +82,8 @@ public class AssemblyLine : MonoBehaviour
         GameObject itemToPackage = GetClosestItem()?.gameObject;
         catAnimator.SetTrigger("Package");
 
-        if(AudioSources == null) {
-            Debug.Log("AWA");
-        }
-
         var hitAudioSource = AudioSources.First(x => x.clip == null || x.clip.name != "yeah");
-        hitAudioSource.clip = AudioClips[Random.Range(0, AudioClips.Count)];
+        hitAudioSource.clip = HitAudioClips[Random.Range(0, HitAudioClips.Count)];
         hitAudioSource.Play();
 
         if (itemToPackage != null)
@@ -128,8 +125,11 @@ public class AssemblyLine : MonoBehaviour
     private void YeetItem()
     {
         GameObject itemToYeet = GetClosestItem()?.gameObject;
-
         catAnimator.SetTrigger("Yeet");
+
+        var yeetAudioSource = AudioSources.First(x => x.clip == null || x.clip.name != "yeah");
+        yeetAudioSource.clip = YeetAudioClips[Random.Range(0, YeetAudioClips.Count)];
+        yeetAudioSource.Play();
 
         if (itemToYeet != null)
         {
@@ -137,6 +137,7 @@ public class AssemblyLine : MonoBehaviour
 
             if (itemToYeet.tag.Equals("Bad"))
             {
+                AudioSources.First(x => x.clip.name == "yeah").Play();
                 GameManager.Instance.UpdateScore(itemScore * -1);
             }
             else
