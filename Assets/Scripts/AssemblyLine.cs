@@ -7,6 +7,7 @@ using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class AssemblyLine : MonoBehaviour
 {
@@ -41,6 +42,9 @@ public class AssemblyLine : MonoBehaviour
     [SerializeField] private GameObject CatPackager;
     [SerializeField] private GameObject ButtonSign;
 
+    [SerializeField] private List<AudioClip> AudioClips;
+    private List<AudioSource> AudioSources;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,9 @@ public class AssemblyLine : MonoBehaviour
 
         packageKeyText.text = playerInput.actions[packageActionName].bindings[0].ToDisplayString();
         yeetKeyText.text = playerInput.actions[yeetActionName].bindings[0].ToDisplayString();
+
+        AudioSources = new List<AudioSource>(GetComponents<AudioSource>());
+
     }
 
     // Update is called once per frame
@@ -74,6 +81,14 @@ public class AssemblyLine : MonoBehaviour
         GameObject itemToPackage = GetClosestItem()?.gameObject;
         catAnimator.SetTrigger("Package");
 
+        if(AudioSources == null) {
+            Debug.Log("AWA");
+        }
+
+        var hitAudioSource = AudioSources.First(x => x.clip == null || x.clip.name != "yeah");
+        hitAudioSource.clip = AudioClips[Random.Range(0, AudioClips.Count)];
+        hitAudioSource.Play();
+
         if (itemToPackage != null)
         {
             int itemScore = itemToPackage.GetComponent<ItemStats>().itemScore;
@@ -97,6 +112,9 @@ public class AssemblyLine : MonoBehaviour
                 SpriteRenderer renderer = itemToPackage.GetComponent<SpriteRenderer>();
                 renderer.sprite = randomBoxSprite;
                 itemToPackage.tag = "Package";
+
+                AudioSources.First(x => x.clip.name == "yeah").Play();
+
                 GameManager.Instance.UpdateScore(itemScore);
                 
             }
