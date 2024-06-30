@@ -172,6 +172,10 @@ MonoBehaviour:
     timeUntilNextLevel: 20
   - timeBetweenSpawnMin: 1
     timeBetweenSpawnMax: 2
+    goodItemSpawnRate: 75
+    timeUntilNextLevel: 30
+  - timeBetweenSpawnMin: 0.5
+    timeBetweenSpawnMax: 1
     goodItemSpawnRate: 50
     timeUntilNextLevel: 20
 --- !u!4 &7504445
