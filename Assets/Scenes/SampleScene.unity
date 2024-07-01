@@ -166,18 +166,30 @@ MonoBehaviour:
   - {fileID: 591657939}
   currentLevel: 1
   levels:
+  - timeBetweenSpawnMin: 2
+    timeBetweenSpawnMax: 5
+    goodItemSpawnRate: 100
+    timeUntilNextLevel: 15
   - timeBetweenSpawnMin: 1
     timeBetweenSpawnMax: 4
-    goodItemSpawnRate: 90
-    timeUntilNextLevel: 20
+    goodItemSpawnRate: 80
+    timeUntilNextLevel: 15
+  - timeBetweenSpawnMin: 1
+    timeBetweenSpawnMax: 3
+    goodItemSpawnRate: 70
+    timeUntilNextLevel: 15
   - timeBetweenSpawnMin: 1
     timeBetweenSpawnMax: 2
-    goodItemSpawnRate: 75
-    timeUntilNextLevel: 30
+    goodItemSpawnRate: 60
+    timeUntilNextLevel: 15
   - timeBetweenSpawnMin: 0.5
     timeBetweenSpawnMax: 1
     goodItemSpawnRate: 50
-    timeUntilNextLevel: 20
+    timeUntilNextLevel: 15
+  - timeBetweenSpawnMin: 0.5
+    timeBetweenSpawnMax: 0.75
+    goodItemSpawnRate: 50
+    timeUntilNextLevel: 15
 --- !u!4 &7504445
 Transform:
   m_ObjectHideFlags: 0

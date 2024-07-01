@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
             // Check if Game Over
             if (productivity <= 0)
             {
+                GameSettings.Instance.previousScore = boxScore;
                 levelLoader.LoadNextLevel("GameOver");
             }
         }
