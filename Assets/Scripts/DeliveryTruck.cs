@@ -23,6 +23,7 @@ public class DeliveryTruck : MonoBehaviour
         {
             PlayDriveOffAnimation();
             UnloadAllBoxes();
+            GetComponent<AudioSource>().Play();
             return;
         }
 

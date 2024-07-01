@@ -34,10 +34,10 @@ public class AudioManager : MonoBehaviour
             if(source.clip != null && source.clip.name == "conveyor-belt") {
                 source.volume = GameSettings.Instance.volume / 100f * 0.75f;
             }
-            else if(source.clip != null && source.clip.name == "cat-happy" || source.clip.name == "cat-neutral" || source.clip.name == "cat-angry" || source.clip.name == "cat-super") {
-                source.volume = GameSettings.Instance.volume / 100f * 0.825f;
+            else if(source.clip != null && (source.clip.name == "cat-neutral" || source.clip.name == "cat-angry" || source.clip.name == "cat-super")) {
+                source.volume = GameSettings.Instance.volume / 100f * 0.875f;
             }
-            else {
+            else if(source != null) {
                 source.volume = GameSettings.Instance.volume / 100f;
             }
         }
@@ -51,10 +51,10 @@ public class AudioManager : MonoBehaviour
             if(source.clip != null && source.clip.name == "conveyor-belt") {
                 source.volume = GameSettings.Instance.volume / 100f * 0.75f;
             }
-            else if(source.clip != null && source.clip.name == "cat-happy" || source.clip.name == "cat-neutral" || source.clip.name == "cat-angry" || source.clip.name == "cat-super") {
-                source.volume = GameSettings.Instance.volume / 100f * 0.825f;
+            else if(source.clip != null && (source.clip.name == "cat-neutral" || source.clip.name == "cat-angry" || source.clip.name == "cat-super")) {
+                source.volume = GameSettings.Instance.volume / 100f * 0.875f;
             }
-            else {
+            else if(source != null) {
                 source.volume = GameSettings.Instance.volume / 100f;
             }
         }

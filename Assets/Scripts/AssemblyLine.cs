@@ -77,7 +77,8 @@ public class AssemblyLine : MonoBehaviour
         GameObject itemToPackage = GetClosestItem()?.gameObject;
         catAnimator.SetTrigger("Package");
 
-        var hitAudioSource = AudioSources.First(x => x.clip == null || x.clip.name != "yeah");
+        var hitAudioSource = AudioSources.First(x => x.clip == null || (x.clip.name != "yeah" && x.clip.name != "nah"));
+        hitAudioSource.volume = GameSettings.Instance.volume / 100f * 0.9375f;
         hitAudioSource.clip = HitAudioClips[Random.Range(0, HitAudioClips.Count)];
         hitAudioSource.Play();
 
@@ -88,10 +89,17 @@ public class AssemblyLine : MonoBehaviour
             // checks for good or bad item
             if (itemToPackage.tag.Equals("Package"))
             {
+                AudioSources.First(x => x.clip.name == "nah").Play();
                 GameManager.Instance.UpdateScore(-1);
             }
             else
             {
+
+                if(itemToPackage.tag.Equals("Bad"))
+                    AudioSources.First(x => x.clip.name == "nah").Play();
+                else
+                    AudioSources.First(x => x.clip.name == "yeah").Play();
+
                 //Load Truck
                 deliveryTruck.LoadBox();
 
@@ -105,7 +113,7 @@ public class AssemblyLine : MonoBehaviour
                 renderer.sprite = randomBoxSprite;
                 itemToPackage.tag = "Package";
 
-                AudioSources.First(x => x.clip.name == "yeah").Play();
+                
 
                 GameManager.Instance.UpdateScore(itemScore);
                 
@@ -113,6 +121,7 @@ public class AssemblyLine : MonoBehaviour
         }
         else
         {
+            AudioSources.First(x => x.clip.name == "nah").Play();
             GameManager.Instance.UpdateScore(-1);
         }
     }
@@ -122,7 +131,8 @@ public class AssemblyLine : MonoBehaviour
         GameObject itemToYeet = GetClosestItem()?.gameObject;
         catAnimator.SetTrigger("Yeet");
 
-        var yeetAudioSource = AudioSources.First(x => x.clip == null || x.clip.name != "yeah");
+        var yeetAudioSource = AudioSources.First(x => x.clip == null || x.clip.name != "yeah" && x.clip.name != "nah");
+        yeetAudioSource.volume = GameSettings.Instance.volume / 100f * 0.9375f;
         yeetAudioSource.clip = YeetAudioClips[Random.Range(0, YeetAudioClips.Count)];
         yeetAudioSource.Play();
 
@@ -133,17 +143,19 @@ public class AssemblyLine : MonoBehaviour
             if (itemToYeet.tag.Equals("Bad"))
             {
                 AudioSources.First(x => x.clip.name == "yeah").Play();
-                GameManager.Instance.UpdateScore(itemScore * -1);
             }
             else
             { 
-                GameManager.Instance.UpdateScore(itemScore * -1); 
+                AudioSources.First(x => x.clip.name == "nah").Play();
             }
+
+            GameManager.Instance.UpdateScore(itemScore * -1);
 
             Destroy(itemToYeet);
         }
         else
         {
+            AudioSources.First(x => x.clip.name == "nah").Play();
             GameManager.Instance.UpdateScore(-1);
         }
     }
