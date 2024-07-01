@@ -32,6 +32,8 @@ public class Shake : MonoBehaviour
 
     private void Update()
     {
+        canShake = GameSettings.Instance.canShake;
+
         if (start)
         {
             start = false;

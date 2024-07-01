@@ -12,8 +12,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject difficultyUI;
+    
     [SerializeField] private LevelLoader levelLoader;
-
+    [SerializeField] private Toggle screenShakeToggle;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private AudioManager audioManager;
 
@@ -59,14 +60,22 @@ public class MainMenu : MonoBehaviour
         mainMenuUI.SetActive(!isActive);
         tutorialUI.SetActive(!isActive);
         difficultyUI.SetActive(isActive);
+    }
 
-
+    public void UpdateScreenShake()
+    {
+        GameSettings.Instance.canShake = !GameSettings.Instance.canShake;
     }
 
     public void UpdateVolume()
     {
         GameSettings.Instance.volume = (int)(volumeSlider.value * 100);
         audioManager.ChangeVolume();
+    }
+
+    public void DebugTest()
+    {
+        Debug.Log("This is a test message!");
     }
 
     public void AssemblyLineOne()

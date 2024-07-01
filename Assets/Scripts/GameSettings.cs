@@ -25,6 +25,7 @@ public class GameSettings : MonoBehaviour
     // General Settings
     [Header("General")]
     [SerializeField] public int volume = 50;
+    [SerializeField] public bool canShake = true;
     [SerializeField] public int NumberOfAssemblyLines = 2;
 
     public int previousScore = 0;
