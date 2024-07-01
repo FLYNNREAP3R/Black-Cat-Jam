@@ -232,8 +232,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f0838c854f694a408a5ecb979a83aa7, type: 2}
+  m_sharedMaterial: {fileID: 2248743581451964493, guid: 1f0838c854f694a408a5ecb979a83aa7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1088,6 +1088,8 @@ MonoBehaviour:
   OosSign: {fileID: 5185732459311281437}
   CatPackager: {fileID: 3095087513714079396}
   ButtonSign: {fileID: 908520394890086356}
+  HitAudioClips: []
+  YeetAudioClips: []
 --- !u!1 &7673325447755889887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,8 +1188,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f0838c854f694a408a5ecb979a83aa7, type: 2}
+  m_sharedMaterial: {fileID: 2248743581451964493, guid: 1f0838c854f694a408a5ecb979a83aa7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
