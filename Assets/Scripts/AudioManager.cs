@@ -31,7 +31,15 @@ public class AudioManager : MonoBehaviour
 
         foreach (AudioSource source in AudioSources)
         {
-            source.volume = GameSettings.Instance.volume / 100f;
+            if(source.clip != null && source.clip.name == "conveyor-belt") {
+                source.volume = GameSettings.Instance.volume / 100f * 0.75f;
+            }
+            else if(source.clip != null && source.clip.name == "cat-happy" || source.clip.name == "cat-neutral" || source.clip.name == "cat-angry" || source.clip.name == "cat-super") {
+                source.volume = GameSettings.Instance.volume / 100f * 0.825f;
+            }
+            else {
+                source.volume = GameSettings.Instance.volume / 100f;
+            }
         }
 
     }
@@ -40,7 +48,15 @@ public class AudioManager : MonoBehaviour
     {
         foreach (AudioSource source in AudioSources)
         {
-            source.volume = GameSettings.Instance.volume / 100f;
+            if(source.clip != null && source.clip.name == "conveyor-belt") {
+                source.volume = GameSettings.Instance.volume / 100f * 0.75f;
+            }
+            else if(source.clip != null && source.clip.name == "cat-happy" || source.clip.name == "cat-neutral" || source.clip.name == "cat-angry" || source.clip.name == "cat-super") {
+                source.volume = GameSettings.Instance.volume / 100f * 0.825f;
+            }
+            else {
+                source.volume = GameSettings.Instance.volume / 100f;
+            }
         }
     }
 }
