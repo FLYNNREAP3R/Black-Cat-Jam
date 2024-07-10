@@ -49,20 +49,21 @@ public class Scaler : MonoBehaviour
 
     private void Scale(float scaleFactor) {
 
-        var newPosition = new Vector3(
-            InitialPosition.x > 0 ? Math.Min(InitialPosition.x, InitialPosition.x * scaleFactor) : Math.Max(InitialPosition.x, InitialPosition.x * scaleFactor),
-            InitialPosition.y > 0 ? Math.Min(InitialPosition.y, InitialPosition.y * scaleFactor) : Math.Max(InitialPosition.y, InitialPosition.y * scaleFactor),
-            InitialPosition.z > 0 ? Math.Min(InitialPosition.z, InitialPosition.z * scaleFactor) : Math.Max(InitialPosition.z, InitialPosition.z * scaleFactor)
-        );
-
         var newLocalScale = new Vector3(
             InitialScale.x > 0 ? Math.Min(InitialScale.x, InitialScale.x * scaleFactor) : Math.Max(InitialScale.x, InitialScale.x * scaleFactor),
             InitialScale.y > 0 ? Math.Min(InitialScale.y, InitialScale.y * scaleFactor) : Math.Max(InitialScale.y, InitialScale.y * scaleFactor),
             InitialScale.z > 0 ? Math.Min(InitialScale.z, InitialScale.z * scaleFactor) : Math.Max(InitialScale.z, InitialScale.z * scaleFactor)
         );
-
         transform.localScale = newLocalScale;
-        transform.position = newPosition;
+
+        if(tag != "Bad" && tag != "Good" && tag != "Package") {
+            var newPosition = new Vector3(
+                InitialPosition.x > 0 ? Math.Min(InitialPosition.x, InitialPosition.x * scaleFactor) : Math.Max(InitialPosition.x, InitialPosition.x * scaleFactor),
+                InitialPosition.y > 0 ? Math.Min(InitialPosition.y, InitialPosition.y * scaleFactor) : Math.Max(InitialPosition.y, InitialPosition.y * scaleFactor),
+                InitialPosition.z > 0 ? Math.Min(InitialPosition.z, InitialPosition.z * scaleFactor) : Math.Max(InitialPosition.z, InitialPosition.z * scaleFactor)
+            );
+            transform.position = newPosition;
+        }
 
     }
 }

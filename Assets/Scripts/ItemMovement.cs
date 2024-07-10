@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ItemMovement : MonoBehaviour
@@ -10,7 +11,18 @@ public class ItemMovement : MonoBehaviour
 
     void Start()
     {
+        
         currentNode = 0;
+
+        Vector2 topRightCorner = new(1, 1);
+        Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
+        var height = edgeVector.y * 2;
+        var width = edgeVector.x * 2;
+
+        var scaleFactor = width / height / (16f / 9.05f);
+
+        itemSpeed *= Math.Min(1, scaleFactor);
+
     }
 
     void Update()
@@ -44,15 +56,23 @@ public class ItemMovement : MonoBehaviour
     // Moves gameObject towards next closest node in path
     private void MoveTowardsNode()
     {
+
+        Vector2 topRightCorner = new(1, 1);
+        Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
+        var height = edgeVector.y * 2;
+        var width = edgeVector.x * 2;
+
+        var scaleFactor = width / height / (16f / 9.05f);
+
         if (currentNode == 0)
         {
-            itemSpeed = 6f;
+            itemSpeed = 6f * Math.Min(1, scaleFactor);
         } else if (currentNode == 1)
         {
-            itemSpeed = 4f;
+            itemSpeed = 4f * Math.Min(1, scaleFactor);
         } else
         {
-            itemSpeed = 2f;
+            itemSpeed = 2f * Math.Min(1, scaleFactor);
         }
 
         transform.position = Vector3.MoveTowards(transform.position, path[currentNode].transform.position, itemSpeed * Time.deltaTime);

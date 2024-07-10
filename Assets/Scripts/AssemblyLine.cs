@@ -185,11 +185,18 @@ public class AssemblyLine : MonoBehaviour
             allItems[i] = ItemContainer.transform.GetChild(i);
         }
 
+        Vector2 topRightCorner = new(1, 1);
+        Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
+        var height = edgeVector.y * 2;
+        var width = edgeVector.x * 2;
+
+        var scaleFactor = width / height / (16f / 9.05f);
+
         // check for closest distance
         foreach (Transform item in allItems)
         {
             float dist = Vector3.Distance(item.position, interactionZone.position);
-            if (dist < closestDistance && dist < minInteractionDistance)
+            if (dist < closestDistance && dist < minInteractionDistance * System.Math.Min(1, scaleFactor))
             {
                 closestItem = item;
                 closestDistance = dist;

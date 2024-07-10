@@ -1782,7 +1782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1f57b86d857254b98435163ab36a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialPosition: {x: 0, y: 0, z: 0}
+  InitialPosition: {x: -1.98, y: -4.3, z: 0}
   InitialScale: {x: 0.463, y: 0.463, z: 0.463}
 --- !u!1 &1752335547
 GameObject:
