@@ -11,9 +11,9 @@ public class BgObjects : MonoBehaviour
     private void FixedUpdate()
     {
         if (isRight) {
-            if (transform.position.x > 11)
+            if (transform.position.x > 10)
             {
-                transform.position = new Vector3(-12, transform.position.y, transform.position.z);
+                transform.position = new Vector3(-13, transform.position.y, transform.position.z);
             } else
             {
                 transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World);
@@ -21,9 +21,9 @@ public class BgObjects : MonoBehaviour
         }
         else
         {
-            if (transform.position.x < -12)
+            if (transform.position.x < -13)
             {
-                transform.position = new Vector3(11, transform.position.y, transform.position.z);
+                transform.position = new Vector3(10, transform.position.y, transform.position.z);
             }
             else
             {

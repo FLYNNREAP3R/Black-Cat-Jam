@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject difficultyUI;
+
+    [SerializeField] private GameObject mainMenuBackground;
+    [SerializeField] private GameObject tutorialBackground;
+    [SerializeField] private GameObject creditsBackground;
+    [SerializeField] private GameObject settingsBackground;
+    [SerializeField] private GameObject difficultyBackground;
     
     [SerializeField] private LevelLoader levelLoader;
     [SerializeField] private Toggle screenShakeToggle;
@@ -40,26 +46,35 @@ public class MainMenu : MonoBehaviour
     public void SetActiveTutorial(bool isActive)
     {
         mainMenuUI.SetActive(!isActive);
+        mainMenuBackground.SetActive(!isActive);
         tutorialUI.SetActive(isActive);
+        tutorialBackground.SetActive(isActive);
     }
 
     public void SetActiveCredits(bool isActive)
     {
         mainMenuUI.SetActive(!isActive);
+        mainMenuBackground.SetActive(!isActive);
         creditsUI.SetActive(isActive);
+        creditsBackground.SetActive(isActive);
     }
 
     public void SetActiveSettings(bool isActive)
     {
         mainMenuUI.SetActive(!isActive);
+        mainMenuBackground.SetActive(!isActive);
         settingsUI.SetActive(isActive);
+        settingsBackground.SetActive(isActive);
     }
 
     public void SetActiveDifficulty(bool isActive)
     {
         mainMenuUI.SetActive(!isActive);
+        mainMenuBackground.SetActive(!isActive);
         tutorialUI.SetActive(!isActive);
+        tutorialBackground.SetActive(!isActive);
         difficultyUI.SetActive(isActive);
+        difficultyBackground.SetActive(isActive);
     }
 
     public void UpdateScreenShake()
