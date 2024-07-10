@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 184098560}
   - component: {fileID: 184098559}
   - component: {fileID: 184098561}
+  - component: {fileID: 184098562}
   m_Layer: 0
   m_Name: FiredImage
   m_TagString: SoundSource
@@ -303,6 +304,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &184098562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184098558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1f57b86d857254b98435163ab36a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialPosition: {x: 0, y: 0, z: 0}
+  InitialScale: {x: 0.47, y: 0.47, z: 0.47}
 --- !u!1 &192478440
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +894,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1701,6 +1716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247212812}
   - component: {fileID: 1247212813}
+  - component: {fileID: 1247212814}
   m_Layer: 0
   m_Name: ScoreContainer
   m_TagString: Untagged
@@ -1754,6 +1770,20 @@ MonoBehaviour:
   SecondDigitScore: {fileID: 1987817859}
   ThirdDigitScore: {fileID: 712347005}
   FourthDigitScore: {fileID: 960955853}
+--- !u!114 &1247212814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247212811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1f57b86d857254b98435163ab36a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialPosition: {x: 0, y: 0, z: 0}
+  InitialScale: {x: 0.463, y: 0.463, z: 0.463}
 --- !u!1 &1752335547
 GameObject:
   m_ObjectHideFlags: 0
